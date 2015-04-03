@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+
   resources :users, defaults: { format: :json }, only: [:index, :create, :show, :update] do
     post 'sign_in', on: :collection
   end
+
   resources :categories, only: [:index, :create, :show, :update, :destroy] do
     resources :resources, :flashcards, only: [:index, :create, :show, :update, :delete] do
     end
