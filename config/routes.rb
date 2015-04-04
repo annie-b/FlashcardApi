@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
 
-  resources :users, defaults: { format: :json }, only: [:index, :create, :show, :update] do
-    post 'sign_in', on: :collection
-  end
+  resources :users, only: [:index, :create, :show, :update]
+    post '/login', to: 'users#login'
+    get '/logout', to: 'users#logout'
 
   resources :categories, only: [:index, :create, :show, :update, :destroy] do
     resources :resources, :flashcards, only: [:index, :create, :show, :update, :delete] do
     end
   end
 
-  root 'users#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
