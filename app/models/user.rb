@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   private
   def set_token
     return if token.present?
-      self.token = generate_token
+    self.token = generate_token
   end
 
   def generate_token

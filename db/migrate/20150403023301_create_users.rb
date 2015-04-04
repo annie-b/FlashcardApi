@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :password_digest
       t.string :token
+      t.string :avatar, default: 'https://s3.amazonaws.com/db-puzzle-pics/'
     end
   end
 end
