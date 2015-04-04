@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20150403024248) do
     t.string "email"
     t.string "password_digest"
     t.string "token"
+    t.string "avatar",          default: "https://s3.amazonaws.com/db-puzzle-pics/"
   end
 
   add_foreign_key "categories", "users"

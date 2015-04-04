@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    render json: @user, :include => [:name]
+    render json: @user
   end
 
   def create

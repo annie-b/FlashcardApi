@@ -8,7 +8,7 @@
 User.destroy_all
 
 users = User.create!([
-  {name: 'Kelly', username: 'RubyQueen1', email: 'kelly@fake.com', password: '123', token: 'insert_token_here'},
-  {name: 'Matt', username: 'Matt1', email: 'matt@fake.com', password: '1234', token: 'insert_token_here'},
-  {name: 'Jodi', username: 'Jodi1', email: 'jodi@fake.com', password: '12345', token: 'insert_token_here'}
+  {name: 'Kelly', username: 'RubyQueen1', email: 'kelly@fake.com', password: '123'},
+  {name: 'Matt', username: 'Matt1', email: 'matt@fake.com', password: '1234'},
+  {name: 'Jodi', username: 'Jodi1', email: 'jodi@fake.com', password: '12345'}
   ])
