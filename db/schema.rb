@@ -17,11 +17,8 @@ ActiveRecord::Schema.define(version: 20150403024248) do
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.string  "name"
-    t.integer "user_id"
+    t.string "name"
   end
-
-  add_index "categories", ["user_id"], name: "index_categories_on_user_id", using: :btree
 
   create_table "flashcards", force: :cascade do |t|
     t.string  "title"
@@ -53,7 +50,6 @@ ActiveRecord::Schema.define(version: 20150403024248) do
     t.string "avatar",          default: "https://s3.amazonaws.com/db-puzzle-pics/"
   end
 
-  add_foreign_key "categories", "users"
   add_foreign_key "flashcards", "categories"
   add_foreign_key "flashcards", "users"
   add_foreign_key "resources", "categories"

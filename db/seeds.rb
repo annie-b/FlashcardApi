@@ -28,7 +28,7 @@ categories = Category.create([
   {name: "Python"}
 ])
 
-resources = Resource.create([
+category_resources = Resource.create([
   { title: "Ruby Warrior, Learn Ruby Programming with Bloc", url: "https://www.bloc.io/ruby-warrior#/", user_id: users[0].id},
   { title: "Code Wars", url: "https://www.codewars.com/users/sign_in", user_id: users[0].id},
   { title: "Exercism", url: "http://exercism.io/", user_id: users[0].id },
@@ -68,49 +68,49 @@ resources = Resource.create([
   { title: "Speaking JS", url: "http://speakingjs.com/es5/", user_id: users[0].id }
 ])
 
-resources[0].categories << Category.find_by(name:"Ruby")
+categories[1].resources << category_resources[0]
 
-resources[1].categories << Category.find_by(name:"Ruby")
-resources[1].categories << Category.find_by(name:"Javascript")
-resources[1].categories << Category.find_by(name:"C")
-resources[1].categories << Category.find_by(name:"Python")
+categories[1].resources << category_resources[1]
+categories[2].resources << category_resources[1]
+categories[10].resources << category_resources[1]
+categories[11].resources << category_resources[1]
 
-resources[2].categories << Category.find_by(name:"Ruby")
-resources[2].categories << Category.find_by(name:"Javascript")
-resources[2].categories << Category.find_by(name:"C")
-resources[2].categories << Category.find_by(name:"Python")
+categories[1].resources << category_resources[2]
+categories[2].resources << category_resources[2]
+categories[10].resources << category_resources[2]
+categories[11].resources << category_resources[2]
 
-resources[3].categories << Category.find_by(name:"Ruby")
-resources[3].categories << Category.find_by(name:"Javascript")
-resources[3].categories << Category.find_by(name:"C")
-resources[3].categories << Category.find_by(name:"Python")
+categories[1].resources << category_resources[3]
+categories[2].resources << category_resources[3]
+categories[10].resources << category_resources[3]
+categories[11].resources << category_resources[3]
 
-resources[4].categories << Category.find_by(name:"Ruby")
-resources[4].categories << Category.find_by(name:"Javascript")
-resources[4].categories << Category.find_by(name:"C")
-resources[4].categories << Category.find_by(name:"Python")
+categories[1].resources << category_resources[4]
+categories[2].resources << category_resources[4]
+categories[10].resources << category_resources[4]
+categories[11].resources << category_resources[4]
 
-resources[5].categories << Category.find_by(name:"Ruby")
-resources[5].categories << Category.find_by(name:"Javascript")
-resources[5].categories << Category.find_by(name:"C")
-resources[5].categories << Category.find_by(name:"Python")
+categories[1].resources << category_resources[5]
+categories[2].resources << category_resources[5]
+categories[10].resources << category_resources[5]
+categories[11].resources << category_resources[5]
 
-resources[6].categories << Category.find_by(name:"Ruby")
-resources[6].categories << Category.find_by(name:"Testing")
+categories[9].resources << category_resources[6]
+categories[1].resources << category_resources[6]
 
-resources[7].categories << Category.find_by(name:"Ruby")
-resources[7].categories << Category.find_by(name:"Testing")
+categories[9].resources << category_resources[7]
+categories[1].resources << category_resources[7]
 
-resources[8].categories << Category.find_by(name:"Ruby")
-resources[8].categories << Category.find_by(name:"Javascript")
-resources[8].categories << Category.find_by(name:"C")
-resources[8].categories << Category.find_by(name:"Python")
-resources[8].categories << Category.find_by(name:"Testing")
+categories[9].resources << category_resources[8]
+categories[10].resources << category_resources[8]
+categories[11].resources << category_resources[8]
+categories[1].resources << category_resources[8]
+categories[2].resources << category_resources[8]
 
-resources[9].categories << Category.find_by(name:"Testing")
+categories[9].resources << category_resources[9]
 
-resources[10].categories << Category.find_by(name:"Ruby")
+categories[1].resources << category_resources[10]
 
-resources[11].categories << Category.find_by(name:"SQL")
+categories[7].resources << category_resources[11]
 
-resources[12].categories << Category.find_by(name:"Design")
+categories[0].resources << category_resources[12]
