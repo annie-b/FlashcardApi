@@ -1,11 +1,11 @@
 class ResourcesController < ApplicationController
 
-  before_filter :authenticate
+  # before_filter :authenticate
 
   def index
     if params[:category_id]
       @category = Category.find(params[:category_id])
-      @resources = @categories.resources
+      @resources = @category.resources
       render json: @resources, status: :ok
     else
       @resources = Resource.all

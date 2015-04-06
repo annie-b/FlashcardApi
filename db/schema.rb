@@ -34,12 +34,10 @@ ActiveRecord::Schema.define(version: 20150403024248) do
   create_table "resources", force: :cascade do |t|
     t.string  "title"
     t.string  "url"
-    t.integer "user_id"
     t.integer "category_id"
   end
 
   add_index "resources", ["category_id"], name: "index_resources_on_category_id", using: :btree
-  add_index "resources", ["user_id"], name: "index_resources_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -53,5 +51,4 @@ ActiveRecord::Schema.define(version: 20150403024248) do
   add_foreign_key "flashcards", "categories"
   add_foreign_key "flashcards", "users"
   add_foreign_key "resources", "categories"
-  add_foreign_key "resources", "users"
 end

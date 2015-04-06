@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :set_user, only: [:show, :update, :destroy]
+  before_filter :authenticate, only: [:sign_in, :show, :update]
 
   def login
     user = User.find_by(username: params[:username])
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    render json: @users
+    render json: @users, status: 200
   end
 
   def show
@@ -35,13 +35,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      render json: {token: @user.token}
+      render json: {token: @user.token, id: @user.id}, status: :created, location: @user
     else
       render json: @user.errors, status: :unprocessable_entity
     end
   end
 
   def update
+    @user = User.find(params[:id])
     if @user.update(user_params)
       head :no_content
     else
@@ -50,10 +51,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-  def set_user
-    @user = User.find(params[:id])
-  end
 
   def user_params
     params.require(:user).permit(:name, :username, :email, :password, :password_confirmation, :avatar, :token)
