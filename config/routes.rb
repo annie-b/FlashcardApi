@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :users, only: [:index, :create, :show, :update]
-    post '/login', to: 'users#login'
-    get '/logout', to: 'users#logout'
+    resources :users, defaults: { format: :json }, only: [:index, :create, :show, :update] do
+    post 'sign_in', on: :collection
+  end
 
   resources :categories, only: [:index, :create, :show, :update, :destroy] do
     resources :resources, :flashcards, only: [:index, :create, :show, :update, :delete] do
@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   end
 
   get '/amazon/sign_key/:id', to: 'amazon#sign_key'
+
+  root 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

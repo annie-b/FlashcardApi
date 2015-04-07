@@ -11,6 +11,7 @@ gem 'active_model_serializers'
 gem 'nokogiri'
 gem 'bcrypt', '~> 3.1.7'
 gem 'aws-sdk'
+gem 'rails-erd'
 group :development, :test do
   gem 'capybara'
   gem 'rubocop'
