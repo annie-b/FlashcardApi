@@ -21,7 +21,7 @@ class FlashcardsController < ApplicationController
   def create
     @category = Category.find(params[:category_id])
     @flashcard = Flashcard.new(flashcard_params)
-    @category.flashcards << flashcard
+    @category.flashcards << @flashcard
     if @flashcard.save
       render json: @flashcard, status: :created
     else

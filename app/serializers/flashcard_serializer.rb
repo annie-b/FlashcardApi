@@ -1,3 +1,3 @@
 class FlashcardSerializer < ActiveModel::Serializer
-  attributes :id, :title, :term, :definition, :category, :user
+  attributes :id, :term, :definition, :category
 end

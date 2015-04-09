@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  # before_filter :authenticate, except: [:sign_in, :create, :show]
+  before_filter :authenticate, except: [:sign_in, :create, :show]
 
   def sign_in
     user = User.find_by(username: params[:username])
@@ -17,7 +17,6 @@ class UsersController < ApplicationController
   end
 
   def show
-     # binding.pry
     @user = User.find(params[:id])
      render json: @user, status: 200
      # {id: @user.id}

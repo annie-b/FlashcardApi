@@ -6,6 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.destroy_all
+Category.destroy_all
+Resource.destroy_all
+Flashcard.destroy_all
 
 users = User.create!([
   {name: 'Kelly', username: 'RubyQueen1', email: 'kelly@fake.com', password: '123'},
@@ -13,7 +16,7 @@ users = User.create!([
   {name: 'Jodi', username: 'Jodi1', email: 'jodi@fake.com', password: '12345'}
   ])
 
-categories = Category.create([
+categories = Category.create!([
   {name: "Design"},
   {name: "Ruby"},
   {name: "Javascript"},
@@ -28,7 +31,7 @@ categories = Category.create([
   {name: "Python"}
 ])
 
-category_resources = Resource.create([
+category_resources = Resource.create!([
   { title: "Ruby Warrior, Learn Ruby Programming with Bloc", url: "https://www.bloc.io/ruby-warrior#/"},
   { title: "Code Wars", url: "https://www.codewars.com/users/sign_in"},
   { title: "Exercism", url: "http://exercism.io/"},
@@ -114,3 +117,48 @@ categories[1].resources << category_resources[10]
 categories[7].resources << category_resources[11]
 
 categories[0].resources << category_resources[12]
+
+category_flashcards = Flashcard.create!([
+  { term: "6 primative types in Javascript", definition: "string, number, boolean, null, undefined, symbol"},
+  { term: "NaN", definition: "The initial value of NaN is Not-A-Number — the same as the value of Number; Property of the global object, writable = no, enumerable = no, configurable = no"},
+  { term: "Bubble Sort", definition: "O(n^2); Pseudocode: procedure bubbleSort( A : list of sortable items )
+   n = length(A)
+   repeat
+     swapped = false
+     for i = 1 to n-1 inclusive do
+       /* if this pair is out of order */
+       if A[i-1] > A[i] then
+         /* swap them and remember something changed */
+         swap( A[i-1], A[i] )
+         swapped = true
+       end if
+     end for
+   until not swapped
+end procedure"},
+  { term: "Fibonacci Sequence", definition: "The Fibonacci Sequence is the series of numbers:
+
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
+
+The next number is found by adding up the two numbers before it."},
+  { term: "acosh", definition: "Computes the inverse hyperbolic cosine of x."},
+  { term: "atanh", definition: "Computes the inverse hyperbolic tangent of x."},
+  { term: "cbrt", definition: "Returns the cube root of numeric"},
+  { term: "cos", definition: "Computes the cosine of x (expressed in radians). Returns -1..1."},
+  { term: "cosh", definition: "Computes the hyperbolic cosine of x (expressed in radians)."},
+  { term: "erf", definition: "Returns the error function of x"},
+  { term: "erfc", definition: "Returns the complementary error function of x."}
+])
+
+categories[0].flashcards << category_flashcards[2]
+categories[1].flashcards << category_flashcards[2]
+
+categories[2].flashcards << category_flashcards[8]
+categories[3].flashcards << category_flashcards[8]
+
+categories[4].flashcards << category_flashcards[1]
+categories[5].flashcards << category_flashcards[1]
+categories[6].flashcards << category_flashcards[1]
+categories[7].flashcards << category_flashcards[1]
+categories[8].flashcards << category_flashcards[1]
+categories[9].flashcards << category_flashcards[1]
+categories[10].flashcards << category_flashcards[1]

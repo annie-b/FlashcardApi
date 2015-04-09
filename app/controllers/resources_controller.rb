@@ -1,6 +1,6 @@
 class ResourcesController < ApplicationController
 
-  # before_filter :authenticate
+  before_filter :authenticate
 
   def index
     if params[:category_id]
