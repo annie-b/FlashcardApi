@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/amazon/sign_key/:id', to: 'amazon#sign_key'
+  get '/files/sign_key/:id', to: 'files#sign_key'
 
   root 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.

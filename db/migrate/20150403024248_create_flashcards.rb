@@ -1,7 +1,6 @@
 class CreateFlashcards < ActiveRecord::Migration
   def change
     create_table :flashcards do |t|
-      t.string :title
       t.string :term
       t.string :definition
       t.references :user, index: true
